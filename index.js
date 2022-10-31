@@ -17,7 +17,7 @@ const hourHand = document.querySelector('.hour-hand');
         }
 
         const minutes = now.getMinutes();
-        const minutesDegrees = ((minutes / 60) * 360) +  + ((seconds/60)*6) +  90;
+        const minutesDegrees = ((minutes / 60) * 360) +  ((seconds/60)*6) +  90;
         minuteHand.style.transform =  `rotate(${minutesDegrees}deg)`;
 
         if(minutesDegrees === 90) {
@@ -27,7 +27,9 @@ const hourHand = document.querySelector('.hour-hand');
         }
 
         const hours = now.getHours();
-        const hoursDegrees = ((hours / 60) * 360) + ((mins/60)*30) + 90;
+        console.log(hours);
+        const hoursDegrees = ((hours / 60) * 360) + ((minutes/60)*30) + 270;
+        console.log(hoursDegrees);
         hourHand.style.transform =`rotate(${hoursDegrees}deg)`;
 
         if(hoursDegrees === 90) {
